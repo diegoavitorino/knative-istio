@@ -33,3 +33,5 @@ Para fins de deste utilizei duas imagens públicas, totalmente funcional, basica
 Como opcional ele cria um virtual service dinâmico caso queira criar regras de roteamento, path uri, header, etc.
 
 Agora é só parametrizar e refatorar para ser deployada na sua esteira desejada (Gitlab, Jenkins, etc)
+
+(Arquitetura do Knative, Istio detalhes técnicos você encontra nas documentações oficiais das soluções.)
