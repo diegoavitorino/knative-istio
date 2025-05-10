@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+ name: {{ .Values.app.name }}-vs
+ namespace: {{ .Values.app.namespace }}
+spec:
+ hosts:
+   - "*"
+ gateways:
+   - istio-system/istio-gateway
+ http:
+   - route:
+       - destination:
+           host: {{ .Values.app.name }}-v1.{{ .Values.app.namespace }}.svc.cluster.local
+         weight: {{ .Values.traffic.v1 }}
+       {{- if .Values.canary.enabled }}
+       - destination:
+           host: {{ .Values.app.name }}-v2.{{ .Values.app.namespace }}.svc.cluster.local
+         weight: {{ .Values.traffic.v2 }}
+       {{- end }}

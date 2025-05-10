@@ -1,0 +1,30 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+ name: {{ .Values.app.name }}
+ namespace: {{ .Values.app.namespace }}
+spec:
+ {{- if .Values.canary.enabled }}
+ traffic:
+   - revisionName: {{ .Values.app.name }}-v1
+     percent: {{ .Values.traffic.v1 }}
+   - revisionName: {{ .Values.app.name }}-v2
+     percent: {{ .Values.traffic.v2 }}
+ {{- else }}
+ traffic:
+   - latestRevision: true
+     percent: 100
+ {{- end }}
+ template:
+   metadata:
+     name: {{ .Values.app.name }}-v{{ ternary "2" "1" .Values.canary.enabled }}
+     labels:
+       version: v{{ ternary "2" "1" .Values.canary.enabled }}
+     annotations:
+       autoscaling.knative.dev/minScale: "{{ .Values.autoscaling.minScale }}"
+       autoscaling.knative.dev/maxScale: "{{ .Values.autoscaling.maxScale }}"
+   spec:
+     containers:
+       - image: "{{ ternary .Values.image.imageV2 .Values.image.imageV1 .Values.canary.enabled }}"
+         ports:
+          - containerPort: 5000

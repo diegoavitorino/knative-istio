@@ -1,0 +1,21 @@
+# Configurações da aplicação
+app:
+ name: "knative-myapp"
+ namespace: "default"
+
+autoscaling:
+  minScale: "1" #ele automaticamente manter em 0 quando não tem o minScale configurado
+  maxScale: "3"  
+
+# Configurações da imagem
+image:
+ imageV1: "docker.io/istio/examples-helloworld-v1:1.0"
+ imageV2: "docker.io/istio/examples-helloworld-v2:1.0"
+
+# Canary deployment
+canary: 
+  enabled: false
+
+traffic:
+ v1: 80
+ v2: 20
