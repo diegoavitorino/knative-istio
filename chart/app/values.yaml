@@ -4,7 +4,7 @@ app:
  namespace: "default"
 
 autoscaling:
-  minScale: "1" #ele automaticamente manter em 0 quando não tem o minScale configurado
+  minScale: "1" #ele automaticamente deixa em 0 quando não tem o minScale configurado, vai da regra de negócio, downtime, disponibilidade, etc
   maxScale: "3"  
 
 # Configurações da imagem
