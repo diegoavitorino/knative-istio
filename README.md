@@ -1,4 +1,4 @@
-# Knative + Istio on Kubernetes: Canary Deployment Example
+# Knative + Istio + Canary Deployment Example
 
 ## Visão Geral
 
@@ -12,7 +12,7 @@ A solução permite deploys serverless e gerenciamento de tráfego com controle 
 
 ## Topologia
 
-A imagem abaixo representa a topologia de rede e fluxo de tráfego com Knative e Istio, incluindo um exemplo de Canary Deployment onde 80% do tráfego vai para a `revision v1` e 20% para a `revision v2`.
+A imagem abaixo representa de maneira bem resumia a topologia de rede e fluxo de tráfego com Knative e Istio, incluindo um exemplo de Canary Deployment onde 80% do tráfego vai para a `revision v1` e 20% para a `revision v2`.
 
 ![Canary Deployment Topology](./canary-topology.png)
 
