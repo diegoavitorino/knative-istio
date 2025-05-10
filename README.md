@@ -30,4 +30,6 @@ Criei uma demo simples em helm, chamando variáveis (no hardcode guys, fica a fi
 
 Para fins de deste utilizei duas imagens públicas, totalmente funcional, basicamente você só edita o values.yaml de acordo com as necessidades do seu ambiente.
 
+Como opcional ele cria um virtual service dinâmico caso queira criar regras de roteamento, path uri, header, etc.
+
 Agora é só parametrizar e refatorar para ser deployada na sua esteira desejada (Gitlab, Jenkins, etc)
