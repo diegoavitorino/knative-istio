@@ -16,14 +16,6 @@ A imagem abaixo representa a topologia de rede e fluxo de tráfego com Knative e
 
 ![Canary Deployment Topology](./canary-topology.png)
 
-## Como Funciona
-
-1. O tráfego externo passa por um Load Balancer.
-2. O Istio Ingress Gateway gerencia a entrada de tráfego para o cluster Kubernetes.
-3. O Knative Service controla as revisões da aplicação.
-4. A distribuição de tráfego é feita entre diferentes revisões da aplicação (v1 e v2).
-5. Isso permite atualizações seguras com rollback automático se necessário.
-
 ## Requisitos
 
 - Kubernetes cluster (GKE, EKS, AKS ou On-Premise)
@@ -34,5 +26,8 @@ A imagem abaixo representa a topologia de rede e fluxo de tráfego com Knative e
 
 Você pode utilizar a configuração do chart incluído nesse repo como base para um serviço com canary deployment:
 
-Criei uma demo simples em helm, chamando variáveis (no hardcode guys, fica a fica), bem genérica para qualquer time pode utilizar, utilizei duas imagens públicas somente para testes, totalmente funcional, basicamente você só edita o values.yaml de acordo com as necessidades do seu ambiente.
+Criei uma demo simples em helm, chamando variáveis (no hardcode guys, fica a fica), bem genérica para qualquer time pode utilizar.
+
+Para fins de deste utilizei duas imagens públicas, totalmente funcional, basicamente você só edita o values.yaml de acordo com as necessidades do seu ambiente.
+
 Agora é só parametrizar e refatorar para ser deployada na sua esteira desejada (Gitlab, Jenkins, etc)
