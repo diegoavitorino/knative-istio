@@ -34,4 +34,4 @@ Como opcional ele cria um virtual service dinâmico caso queira criar regras de 
 
 Agora é só parametrizar e refatorar para ser deployada na sua esteira desejada (Gitlab, Jenkins, etc)
 
-(Arquitetura do Knative, Istio detalhes técnicos você encontra nas documentações oficiais das soluções.)
+(Arquitetura do Knative, Istio e detalhes técnicos você encontra nas documentações oficiais das soluções.)
