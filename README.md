@@ -26,7 +26,7 @@ A imagem abaixo representa de maneira bem resumia a topologia de rede e fluxo de
 
 Você pode utilizar a configuração do chart incluído nesse repo como base para um serviço com canary deployment:
 
-Criei uma demo simples em helm, com opção para habilitar canaray deployment ou não, chamando variáveis (no hardcode guys, fica a fica), bem genérica para qualquer time pode utilizar.
+Criei uma demo simples em helm, com opção para habilitar canaray deployment ou não, chamando variáveis (no hardcode guys, fica a fica), bem genérica para qualquer time poder utilizar.
 
 Para fins de deste utilizei duas imagens públicas, totalmente funcional, basicamente você só edita o values.yaml de acordo com as necessidades do seu ambiente.
 
